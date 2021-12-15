@@ -3,23 +3,22 @@ import React, { useState } from 'react';
 import {useStyles} from "./App-style"
 
 function App() {
-  const [num1, setNum1] = useState("");
-  const [num2, setNum2] = useState("");
-  const [result, setResult] = useState("")
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [result, setResult] = useState(0)
 
   const style = useStyles();
   const sum = () =>{
-    setResult((Number(num1)+Number(num2))+"");
+    setResult(num1+num2);
   }
 
   return (
     <Box className={style.container}>
       <Box className={style.inputNumber}>
-        <input onChange={(e)=> setNum1(e.target.value)} className={style.number} type="number" />
-        <input onChange={(e)=> setNum2(e.target.value)} className={style.number} type="number" />
+        <input onChange={(e)=> setNum1(Number(e.target.value))} className={style.number} type="number" />
+        <input onChange={(e)=> setNum2(Number(e.target.value))} className={style.number} type="number" />
       </Box>
       <button className={style.button} onClick={()=> sum() }>+</button>
-
       <h3>Resultado: {result}</h3>
     </Box>
   );
