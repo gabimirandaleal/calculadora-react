@@ -29,6 +29,8 @@ export const useStyles = makeStyles({
         border: "0px",
         backgroundColor:"#1F53E5",
         color: "white",
+    },
+    text:{
+        color: "white"
     }
-
 })
